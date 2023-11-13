@@ -1,7 +1,6 @@
 use crate::file_logic::*;
 use std::path::{Path, PathBuf};
 
-
 pub struct FileEntry {
     pub id: usize,
     pub title: String,
@@ -19,5 +18,15 @@ impl FileEntry {
             content,
             path: path.to_path_buf(),
         };
+    }
+}
+impl Clone for FileEntry {
+    fn clone(&self) -> Self {
+        FileEntry {
+            id: self.id,
+            title: self.title.clone(),
+            content: self.content.clone(),
+            path: self.path.clone(),
+        }
     }
 }
