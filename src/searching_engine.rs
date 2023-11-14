@@ -67,7 +67,6 @@ mod tests {
             content: "Content of file two".to_string(),
             path: PathBuf::from("/path/to/file2"),
         });
-        println!("{}",files.get(&1).unwrap().content);
         files
     }
 
@@ -75,7 +74,6 @@ mod tests {
     fn test_generate_indexer() {
         let files = create_mock_files();
         let indexer = generate_indexer(&files);
-        println!("{:?}", indexer);
         assert!(indexer.contains_key("Content"));
     }
 

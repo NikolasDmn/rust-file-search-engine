@@ -78,7 +78,6 @@ mod get_file_sets {
     fn test_get_files_with_valid_directory() {
         let (_temp_dir, dir_path) = create_mock_dir_structure();
         let files = get_files(&dir_path);
-        println!("{:?}", files);
         assert_eq!(files.len(), 4);
     }
 

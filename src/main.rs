@@ -16,8 +16,12 @@ fn main() {
     let dir_path = Path::new(&args[1]);
 
     // Process the directory and generate an indexer
+    println!("Fetching files...");
     let files = file_logic::get_file_set(dir_path);
+    println!("Fetched files.");
+    println!("Indexing files...");
     let indexer = searching_engine::generate_indexer(&files);
+    println!("Indexed files.");
 
     loop {
         let query = get_query();
